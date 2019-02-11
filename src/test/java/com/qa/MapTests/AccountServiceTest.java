@@ -21,7 +21,7 @@ public class AccountServiceTest {
 
 	@Test
 	public void addAccountTest() {
-		assertEquals("Account Added, size:", repo.createAccount("oranges"));
+		assertEquals("Account Added, size:", repo.createAccount("[{firstName:James,lastName:Ingram,accountNumber:102}]"));
 	}
 	
 //	@Ignore
