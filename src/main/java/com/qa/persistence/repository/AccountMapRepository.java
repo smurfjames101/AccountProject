@@ -2,17 +2,15 @@ package com.qa.persistence.repository;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.qa.persistence.domain.Account;
-import com.qa.util.JSONUtil;
 
 public class AccountMapRepository implements AccountRepository {
 
 	ObjectMapper util = new ObjectMapper();
-	private static long id;
+	private long id;
 
 	Map<Long, Account> accountMap = new HashMap<Long, Account>();
 
@@ -56,7 +54,6 @@ public class AccountMapRepository implements AccountRepository {
 	}
 
 	public String updateAccount(Long id, String account) {
-		//this.accountMap.replace(id, util.getObjectForJSON(account, Account.class));
 		return "Account updated.";
 	}
 

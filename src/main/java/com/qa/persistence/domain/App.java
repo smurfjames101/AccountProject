@@ -1,11 +1,16 @@
 package com.qa.persistence.domain;
 
-public class App {
+import java.util.logging.Logger;
 
-	public App()
+public class App {
+	private static final  Logger LOGGER = Logger.getLogger(App.class.getName());
+	private App()
 	{
-		System.out.println("Hello world to the standard out");
+		
 	}
-	
+	public void logger()
+	{
+	LOGGER.info("Hello World");
+	}
 	
 }
