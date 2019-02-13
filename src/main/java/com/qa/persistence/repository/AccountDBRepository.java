@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.qa.persistence.domain.Account;
 import com.qa.util.JSONUtil;
 
@@ -63,5 +64,11 @@ public class AccountDBRepository implements AccountRepository {
 		query.setMaxResults(n);
 		Collection<Account> accounts = (Collection<Account>) query.getResultList();
 		return util.getJSONForObject(accounts);
+	}
+
+	@Override
+	public int cycleAccounts(String accountName) throws JsonProcessingException {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

@@ -2,11 +2,15 @@ package com.qa.persistence.repository;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.enterprise.inject.Alternative;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.qa.persistence.domain.Account;
 
+@Alternative
 public class AccountMapRepository implements AccountRepository {
 	ObjectMapper util = new ObjectMapper();
 	private long id;
@@ -39,7 +43,7 @@ public class AccountMapRepository implements AccountRepository {
 
 	}
 
-	public String deleteAccount(Long id, int account) {
+	public String deleteAccount(Long id) {
 		startAccount.setAccountNumber(666);
 		startAccount.setFirstName("Bobby");
 		startAccount.setLastName("Bobson");
@@ -65,5 +69,17 @@ public class AccountMapRepository implements AccountRepository {
 					}
 		}
 		return nameCount;
+	}
+
+	@Override
+	public String getAnAccount(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getNAccounts(int n) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
