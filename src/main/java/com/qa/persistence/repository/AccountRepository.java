@@ -1,5 +1,7 @@
 package com.qa.persistence.repository;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 public interface AccountRepository {
 
 	String getAllAccounts();
@@ -9,4 +11,5 @@ public interface AccountRepository {
 	String getAnAccount(Long id);
 	String getNAccounts(int n);
 
+	int cycleAccounts(String accountName) throws JsonProcessingException;
 }
