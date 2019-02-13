@@ -19,8 +19,11 @@ public class Account {
 	@Column(length=100)
 	private int accountNumber;
 	
+	public Account()
+	{
+		
+	}
 	public Account(String firstName, String lastName, int accountNumber) {
-		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.accountNumber = accountNumber;
