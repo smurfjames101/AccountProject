@@ -8,9 +8,15 @@ public class App {
 	{
 		
 	}
-	public void logger()
+	public static void logger()
 	{
-	LOGGER.info("Hello World");
+	//LOGGER.info("Hello World");
+	}
+	
+	public static String log()
+	{
+		logger();
+		return "success";
 	}
 	
 }
