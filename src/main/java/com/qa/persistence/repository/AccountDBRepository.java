@@ -29,7 +29,7 @@ public class AccountDBRepository implements AccountRepository {
 	public String createAccount(String account) {
 		Account anAccount = util.getObjectForJSON(account, Account.class);
 		manager.persist(anAccount);
-		return "{\"message\": \"Product has been added\"}";
+		return "{\"message\": \"Account has been added\"}";
 	}
 
 	@Override
@@ -57,8 +57,10 @@ public class AccountDBRepository implements AccountRepository {
 	@Override
 	@Transactional(REQUIRED)
 	public String updateAccount(Long id, String account) {
+		Account temp = new Account();
+		temp = util.getObjectForJSON(account, Account.class);
+		manager.persist(temp);
 		deleteAccount(id);
-		createAccount(account);
 		return "Account updated.";
 	}
 
