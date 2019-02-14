@@ -2,6 +2,8 @@ package com.qa.persistence.repository;
 
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import java.util.Collection;
+
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.Query;
 import javax.persistence.EntityManager;
@@ -12,8 +14,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.qa.persistence.domain.Account;
 import com.qa.util.JSONUtil;
 
+@Default
 public class AccountDBRepository implements AccountRepository {
 
+	
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
 
