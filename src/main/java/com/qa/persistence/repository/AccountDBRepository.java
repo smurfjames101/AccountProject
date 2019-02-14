@@ -48,7 +48,6 @@ public class AccountDBRepository implements AccountRepository {
 	@Transactional(REQUIRED)
 	public String deleteAccount(Long id) {
 		if (manager.contains(manager.find(Account.class, id))) {
-
 			manager.remove(manager.find(Account.class, id));
 		}
 		return "{\"message\": \"Account sucessfully deleted\"}";
@@ -60,8 +59,8 @@ public class AccountDBRepository implements AccountRepository {
 		Account temp = new Account();
 		temp = util.getObjectForJSON(account, Account.class);
 		manager.persist(temp);
-		deleteAccount(id);
-		return "Account updated.";
+		String delOut = deleteAccount(id);
+		return "Account updated."+delOut;
 	}
 
 	@Override
